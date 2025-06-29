@@ -1,31 +1,47 @@
 {
   "name": "mozi",
   "version": "1.0.0",
-  "description": "Analyze GitHub issues and identify fixable ones based on repository context",
+  "description": "Full-stack GitHub issue analyzer with fixability scoring",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node --experimental-strip-types src/index.ts",
-    "dev": "node --experimental-strip-types --watch src/index.ts",
+    "build": "vite build && wrangler deploy --dry-run",
+    "build:client": "vite build",
+    "start": "pnpm dev",
+    "dev": "wrangler dev",
+    "dev:client": "vite dev",
+    "deploy": "vite build && wrangler deploy",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "wrangler d1 migrations apply mozi-db",
+    "db:studio": "drizzle-kit studio",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "github",
     "issues",
     "analysis",
-    "automation"
+    "automation",
+    "cloudflare-worker",
+    "preact",
+    "hono"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@octokit/rest": "^20.0.2",
-    "dotenv": "^16.3.1"
+    "hono": "^4.6.3",
+    "preact": "^10.24.3",
+    "preact-render-to-string": "^6.5.11",
+    "drizzle-orm": "^0.36.4"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241230.0",
+    "@preact/preset-vite": "^2.9.0",
     "@types/node": "^24.0.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
+    "drizzle-kit": "^0.30.0",
+    "typescript": "^5.0.0", 
+    "vite": "^6.0.3",
+    "wrangler": "^4.22.0"
   },
   "packageManager": "pnpm@10.12.1+sha512.f0dda8580f0ee9481c5c79a1d927b9164f2c478e90992ad268bbb2465a736984391d6333d2c327913578b2804af33474ca554ba29c04a8b13060a717675ae3ac",
   "volta": {

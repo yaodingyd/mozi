@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mozi - Issue Analyzer</title>
+  <style>
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      background-color: #fafbfc;
+    }
+    .container { 
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 20px; 
+    }
+    .header { 
+      background: #24292e; 
+      color: white; 
+      padding: 1rem 0; 
+      margin-bottom: 2rem; 
+      box-shadow: 0 1px 3px rgba(27,31,35,0.12), 0 8px 24px rgba(27,31,35,0.12);
+    }
+    .header h1 { 
+      margin: 0; 
+      text-align: center; 
+      font-weight: 600;
+    }
+    .issue-card { 
+      border: 1px solid #e1e4e8; 
+      border-radius: 6px; 
+      padding: 1rem; 
+      margin-bottom: 1rem; 
+      background: white; 
+      box-shadow: 0 1px 0 rgba(27,31,35,0.04);
+      transition: box-shadow 0.2s ease;
+    }
+    .issue-card:hover {
+      box-shadow: 0 1px 3px rgba(27,31,35,0.12);
+    }
+    .issue-title { 
+      font-weight: 600; 
+      color: #0366d6; 
+      text-decoration: none; 
+      font-size: 1.1rem; 
+    }
+    .issue-title:hover {
+      color: #0056b3;
+      text-decoration: underline;
+    }
+    .issue-meta { 
+      color: #586069; 
+      font-size: 0.875rem; 
+      margin-top: 0.5rem; 
+    }
+    .fixability-badge { 
+      display: inline-block; 
+      padding: 0.25rem 0.5rem; 
+      border-radius: 4px; 
+      font-size: 0.75rem; 
+      font-weight: 600; 
+    }
+    .fixability-high { 
+      background: #28a745; 
+      color: white; 
+    }
+    .fixability-medium { 
+      background: #ffc107; 
+      color: #212529; 
+    }
+    .fixability-low { 
+      background: #fd7e14; 
+      color: white; 
+    }
+    .fixability-very-low { 
+      background: #dc3545; 
+      color: white; 
+    }
+    .refresh-btn { 
+      background: #28a745; 
+      color: white; 
+      border: none; 
+      padding: 0.5rem 1rem; 
+      border-radius: 6px; 
+      cursor: pointer; 
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    .refresh-btn:hover {
+      background: #218838;
+    }
+    .refresh-btn:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 200px;
+      color: #586069;
+    }
+    .error {
+      background: #f8d7da;
+      color: #721c24;
+      padding: 1rem;
+      border-radius: 6px;
+      border: 1px solid #f5c6cb;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <h1>🔍 Mozi Issue Analyzer</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div id="app">
+      <div class="loading">
+        <div>Loading application...</div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="../src/app/main.tsx"></script>
+</body>
+</html>

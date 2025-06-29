@@ -39,6 +39,8 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+.claude/
+.wrangler/
 
 
 # Temporary files

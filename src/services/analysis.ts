@@ -1,5 +1,4 @@
-
-import type { IssueContext, FixabilityAnalysis, FixabilityRule } from './types.ts';
+import type { IssueContext, FixabilityAnalysis, FixabilityRule } from '../types';
 
 interface AnalysisRule {
   name: string;
@@ -7,7 +6,7 @@ interface AnalysisRule {
   check: (context: IssueContext) => boolean;
 }
 
-export class IssueAnalyzer {
+export class IssueAnalysisService {
   private fixabilityRules: AnalysisRule[];
   private negativeCriteria: AnalysisRule[];
 

@@ -1,0 +1,22 @@
+name = "mozi"
+main = "src/index.ts"
+compatibility_date = "2023-06-26"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mozi-db"
+database_id = "c96b125f-7b8a-48a9-b53e-4f8552057d56"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[triggers]
+crons = ["0 * * * *"]
+
+[observability.logs]
+enabled = true
